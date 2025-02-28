@@ -1,0 +1,230 @@
+### KG 1
+```
+### Final KG
+"""```turtle
+:WeaklyAcidicFraction rdf:type :Molecule ;
+    rdfs:label "Weakly Acidic Fraction" .
+
+:CigaretteSmoke rdf:type :Molecule ;
+    rdfs:label "Cigarette Smoke" ;
+    :relatedTo :WeaklyAcidicFraction .
+
+:MouseEpidermalDNA rdf:type :Anatomy ;
+    rdfs:label "Mouse Epidermal DNA" .
+
+:ActiveSubfractions rdf:type :Molecule ;
+    rdfs:label "Active Subfractions" ;
+    :relatedTo :WeaklyAcidicFraction .
+
+:InactiveSubfractions rdf:type :Molecule ;
+    rdfs:label "Inactive Subfractions" ;
+    :relatedTo :WeaklyAcidicFraction .
+
+:AlkylCyclopentenones rdf:type :Molecule ;
+    rdfs:label "Alkyl-2-cyclopenten-2-ol-1-ones" ;
+    :relatedTo :ActiveSubfractions .
+
+:Catechols rdf:type :Molecule ;
+    rdfs:label "Catechols" ;
+    :relatedTo :ActiveSubfractions .
+
+:Hydroquinone rdf:type :Molecule ;
+    rdfs:label "Hydroquinone" ;
+    :relatedTo :ActiveSubfractions .
+
+:FattyAcids rdf:type :Molecule ;
+    rdfs:label "Fatty Acids" ;
+    :relatedTo :ActiveSubfractions .
+
+:Hydroxypyridines rdf:type :Molecule ;
+    rdfs:label "3-Hydroxypyridines" ;
+    :relatedTo :ActiveSubfractions .
+
+:LinolenicAcid rdf:type :Molecule ;
+    rdfs:label "Linolenic Acid" ;
+    :relatedTo :ActiveSubfractions .
+
+:LinoleicAcid rdf:type :Molecule ;
+    rdfs:label "Linoleic Acid" ;
+    :relatedTo :ActiveSubfractions .
+
+:TumorPromotingActivity rdf:type :Symptom ;
+    rdfs:label "Tumor Promoting Activity" ;
+    :leadsToSymptom :TumorPromotingActivity .
+
+:ActiveSubfractions :hasSideEffect :TumorPromotingActivity .
+:InactiveSubfractions :hasSideEffect :TumorPromotingActivity .
+:AlkylCyclopentenones :hasSideEffect :TumorPromotingActivity .
+:Catechols :hasSideEffect :TumorPromotingActivity .
+:Hydroquinone :hasSideEffect :TumorPromotingActivity .
+:FattyAcids :hasSideEffect :TumorPromotingActivity .
+:Hydroxypyridines :hasSideEffect :TumorPromotingActivity .
+:LinolenicAcid :hasSideEffect :TumorPromotingActivity .
+:LinoleicAcid :hasSideEffect :TumorPromotingActivity .
+
+:IncorporationOfThymidine rdf:type :Pathway ;
+    rdfs:label "Incorporation of Tritiated Thymidine" ;
+    :involvedIn :MouseEpidermalDNA .
+
+:Chromatography rdf:type :Pathway ;
+    rdfs:label "Silica Gel Chromatography" ;
+    :involvedIn :WeaklyAcidicFraction .
+```
+```
+### KG 2
+```
+### Final KG
+"""```turtle
+:BA1 rdf:type :Drug ;
+    rdfs:label "BA 1" ;
+    :affectsMolecule :N2CyanoethyleneUrea ;
+    :usedFor :DSCarcinosarcoma ;
+    :hasSideEffect :NegligibleLethality ;
+    :interactsWith :Ifosfamide ;
+    :involvedIn :ImmunologicalActivity ;
+    :targetsGene :LeucocyteGene .
+
+:Ifosfamide rdf:type :Drug ;
+    rdfs:label "Ifosfamide" ;
+    :usedFor :DSCarcinosarcoma ;
+    :hasSideEffect :Lethality18Percent ;
+    :interactsWith :BA1 ;
+    :involvedIn :CancerTreatmentPathway ;
+    :targetsGene :LeucocyteGene .
+
+:DSCarcinosarcoma rdf:type :Disease ;
+    rdfs:label "DS Carcinosarcoma" ;
+    :leadsToSymptom :RecoveryRate ;
+    :associatedWithPathway :CancerTreatmentPathway .
+
+:NegligibleLethality rdf:type :SideEffect ;
+    rdfs:label "Negligible Lethality" .
+
+:Lethality18Percent rdf:type :SideEffect ;
+    rdfs:label "Lethality (18 percent)" .
+
+:RecoveryRate rdf:type :Symptom ;
+    rdfs:label "Recovery Rate" .
+
+:N2CyanoethyleneUrea rdf:type :Molecule ;
+    rdfs:label "N-(2-cyanoethylene)-urea" .
+
+:ImmunologicalActivity rdf:type :Pathway ;
+    rdfs:label "Immunological Activity" .
+
+:CancerTreatmentPathway rdf:type :Pathway ;
+    rdfs:label "Cancer Treatment Pathway" .
+
+:LeucocyteGene rdf:type :Gene ;
+    rdfs:label "Leucocyte Gene" .
+
+:WistarRats rdf:type :Anatomy ;
+    rdfs:label "Wistar Rats" .
+```
+```
+### KG 3
+```
+### Final KG
+"""```turtle
+:Phosphodiesterase rdf:type :Enzyme ;
+                   rdfs:label "Cyclic Nucleotide Phosphodiesterase" ;
+                   :involvedIn :Pathway1 ;
+                   :targetsGene :Gene1 ;
+                   :relatedTo :NonMetastasizingTumor, :MetastasizingTumor ;
+                   :affectedBy :Theophylline, :Caffeine, :Ro20_1724, :Mg, :Mn, :Co, :Ca, :Zn, :Ni, :EDTA ;
+                   :hasOptimalPH "8.0" ;
+                   :hydrolyzes :CyclicPurineNucleotides, :CyclicPyrimidineNucleotides ;
+                   :stimulatedBy :Mg, :Mn, :Co ;
+                   :suppressedBy :Ca, :Zn, :Ni ;
+                   :exhibitsActivity :HigherHydrolysisRate .
+
+:Gene1 rdf:type :Gene ;
+       rdfs:label "Gene Associated with Phosphodiesterase" ;
+       :associatedWithDisease :NonMetastasizingTumor, :MetastasizingTumor .
+
+:Pathway1 rdf:type :Pathway ;
+          rdfs:label "Phosphodiesterase Activity Pathway" ;
+          :pathwayAssociatedWithDisease :NonMetastasizingTumor, :MetastasizingTumor .
+
+:NonMetastasizingTumor rdf:type :Disease ;
+                       rdfs:label "Nonmetastasizing Rat Mammary Carcinoma" ;
+                       :hasSideEffect :InhibitionEffect ;
+                       :leadsToSymptom :HigherHydrolysisRate ;
+                       :hasEnzymeActivity :Phosphodiesterase ;
+                       :hydrolysisRate :HigherThanMetastasizingTumor .
+
+:MetastasizingTumor rdf:type :Disease ;
+                    rdfs:label "Spontaneously Metastasizing Rat Mammary Carcinoma" ;
+                    :hasSideEffect :InhibitionEffect ;
+                    :leadsToSymptom :LowerHydrolysisRate ;
+                    :hasEnzymeActivity :Phosphodiesterase .
+
+:HigherHydrolysisRate rdf:type :Symptom ;
+                     rdfs:label "Higher Hydrolysis Rate of Purine Nucleotides" .
+
+:LowerHydrolysisRate rdf:type :Symptom ;
+                    rdfs:label "Lower Hydrolysis Rate of Purine Nucleotides" .
+
+:InhibitionEffect rdf:type :SideEffect ;
+                 rdfs:label "Enzyme Activity Inhibition" .
+
+:Theophylline rdf:type :Drug ;
+              rdfs:label "Theophylline" ;
+              :hasSideEffect :InhibitionEffect ;
+              :usedFor :NonMetastasizingTumor, :MetastasizingTumor ;
+              :interactsWith :Caffeine, :Ro20_1724 .
+
+:Caffeine rdf:type :Drug ;
+          rdfs:label "Caffeine" ;
+          :hasSideEffect :InhibitionEffect ;
+          :usedFor :NonMetastasizingTumor, :MetastasizingTumor ;
+          :interactsWith :Theophylline, :Ro20_1724 .
+
+:Ro20_1724 rdf:type :Drug ;
+           rdfs:label "D,L-4-(3-butoxy-4-methoxybenzyl)-2-imidazolidinone" ;
+           :hasSideEffect :InhibitionEffect ;
+           :usedFor :NonMetastasizingTumor, :MetastasizingTumor ;
+           :interactsWith :Theophylline, :Caffeine .
+
+:Mg rdf:type :Molecule ;
+    rdfs:label "Magnesium" ;
+    :relatedTo :Phosphodiesterase ;
+    :stimulates :Phosphodiesterase .
+
+:Mn rdf:type :Molecule ;
+    rdfs:label "Manganese" ;
+    :relatedTo :Phosphodiesterase ;
+    :stimulates :Phosphodiesterase .
+
+:Co rdf:type :Molecule ;
+    rdfs:label "Cobalt" ;
+    :relatedTo :Phosphodiesterase ;
+    :stimulates :Phosphodiesterase .
+
+:Ca rdf:type :Molecule ;
+    rdfs:label "Calcium" ;
+    :relatedTo :Phosphodiesterase ;
+    :suppresses :Phosphodiesterase .
+
+:Zn rdf:type :Molecule ;
+    rdfs:label "Zinc" ;
+    :relatedTo :Phosphodiesterase ;
+    :suppresses :Phosphodiesterase .
+
+:Ni rdf:type :Molecule ;
+    rdfs:label "Nickel" ;
+    :relatedTo :Phosphodiesterase ;
+    :suppresses :Phosphodiesterase .
+
+:EDTA rdf:type :Molecule ;
+      rdfs:label "Ethylenediaminetetraacetic acid" ;
+      :relatedTo :Phosphodiesterase ;
+      :hasSideEffect :InhibitionEffect .
+
+:CyclicPurineNucleotides rdf:type :Nucleotide ;
+                         rdfs:label "Cyclic Purine Nucleotides" .
+
+:CyclicPyrimidineNucleotides rdf:type :Nucleotide ;
+                             rdfs:label "Cyclic Pyrimidine Nucleotides" .
+```
+```

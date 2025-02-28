@@ -1,0 +1,47 @@
+:HeartFailureWithPreservedEjectionFraction rdf:type :Disease ;
+    rdfs:label "Heart Failure with Preserved Ejection Fraction" ;
+    :relatedTo :Obesity, :Sedentariness, :CardiometabolicDisorders ;
+    :leadsToSymptom :Dyspnea, :ExerciseIntolerance, :Fatigue, :FluidRetention ;
+    :associatedWithDisease :HeartFailure, :AtrialFibrillation ;
+    :hasSideEffect :Fatigue, :FluidRetention ;
+    :usedFor :SGLT2i ;
+    :associatedWithPathway :InflammationPathway, :MetabolicSyndrome .
+
+:SGLT2i rdf:type :Drug ;
+    rdfs:label "Sodium-Glucose Cotransporter-2 Inhibitor" ;
+    :usedFor :HeartFailureWithPreservedEjectionFraction ;
+    :hasSideEffect :Hypoglycemia, :GenitourinaryInfections ;
+    :interactsWith :OtherDiabetesMedications ;
+    :affectsMolecule :GlucoseTransporters ;
+    :involvedIn :MetabolicPathway .
+
+:Obesity rdf:type :Disease ;
+    rdfs:label "Obesity" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction ;
+    :associatedWithDisease :Diabetes ;
+    :hasSideEffect :IncreasedCardiacLoad ;
+    :associatedWithPathway :MetabolicSyndrome .
+
+:Diabetes rdf:type :Disease ;
+    rdfs:label "Diabetes" ;
+    :relatedTo :Obesity .
+
+:Fatigue rdf:type :Symptom ;
+    rdfs:label "Fatigue" .
+
+:FluidRetention rdf:type :Symptom ;
+    rdfs:label "Fluid Retention" .
+
+:Dyspnea rdf:type :Symptom ;
+    rdfs:label "Dyspnea" .
+
+:ExerciseIntolerance rdf:type :Symptom ;
+    rdfs:label "Exercise Intolerance" .
+
+:AtrialFibrillation rdf:type :Disease ;
+    rdfs:label "Atrial Fibrillation" ;
+    :associatedWithDisease :HeartFailureWithPreservedEjectionFraction .
+
+:CardiometabolicDisorders rdf:type :Disease ;
+    rdfs:label "Cardiometabolic Disorders" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction .

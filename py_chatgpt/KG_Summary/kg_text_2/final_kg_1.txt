@@ -1,0 +1,46 @@
+:BA1 rdf:type :Drug ;
+    rdfs:label "BA 1" ;
+    :affectsMolecule :N2CyanoethyleneUrea ;
+    :usedFor :DSCarcinosarcoma ;
+    :hasSideEffect :NegligibleLethality ;
+    :interactsWith :Ifosfamide ;
+    :involvedIn :ImmunologicalActivity ;
+    :targetsGene :ImmuneResponseGene .
+
+:Ifosfamide rdf:type :Drug ;
+    rdfs:label "Ifosfamide" ;
+    :usedFor :DSCarcinosarcoma ;
+    :hasSideEffect :Lethality ;
+    :interactsWith :BA1 ;
+    :involvedIn :ImmunologicalActivity ;
+    :targetsGene :CancerGene .
+
+:DSCarcinosarcoma rdf:type :Disease ;
+    rdfs:label "DS Carcinosarcoma" ;
+    :leadsToSymptom :RecoveryRate ;
+    :relatedTo :WistarRats ;
+    :associatedWithPathway :CancerTreatmentPathway .
+
+:NegligibleLethality rdf:type :SideEffect ;
+    rdfs:label "Negligible Lethality" .
+
+:Lethality rdf:type :SideEffect ;
+    rdfs:label "Lethality" .
+
+:RecoveryRate rdf:type :Symptom ;
+    rdfs:label "Recovery Rate" .
+
+:WistarRats rdf:type :Anatomy ;
+    rdfs:label "Wistar Rats" .
+
+:ImmunologicalActivity rdf:type :Pathway ;
+    rdfs:label "Immunological Activity" .
+
+:CancerTreatmentPathway rdf:type :Pathway ;
+    rdfs:label "Cancer Treatment Pathway" .
+
+:ImmuneResponseGene rdf:type :Gene ;
+    rdfs:label "Immune Response Gene" .
+
+:CancerGene rdf:type :Gene ;
+    rdfs:label "Cancer Gene" .

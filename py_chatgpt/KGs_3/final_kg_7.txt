@@ -1,0 +1,38 @@
+:HeartFailureWithPreservedEjectionFraction rdf:type :Disease ;
+    rdfs:label "Heart Failure with Preserved Ejection Fraction" ;
+    :relatedTo :Obesity, :Sedentariness, :CardiometabolicDisorders ;
+    :leadsToSymptom :Dyspnea, :ExerciseIntolerance ;
+    :associatedWithDisease :HeartFailure, :PulmonaryHypertension ;
+    :hasSideEffect :UnderRecognition ;
+    :associatedWithPathway :Pathophysiology ;
+    :hasTreatment :SGLT2i .
+
+:UnderRecognition rdf:type :SideEffect ;
+    rdfs:label "Under-recognition of HFpEF" .
+
+:SGLT2i rdf:type :Drug ;
+    rdfs:label "Sodium-Glucose Cotransporter-2 Inhibitor" ;
+    :usedFor :HeartFailureWithPreservedEjectionFraction ;
+    :hasSideEffect :Hypoglycemia, :GenitourinaryInfections ;
+    :interactsWith :OtherDrugs .
+
+:Obesity rdf:type :Disease ;
+    rdfs:label "Obesity" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction .
+
+:Dyspnea rdf:type :Symptom ;
+    rdfs:label "Dyspnea" .
+
+:ExerciseIntolerance rdf:type :Symptom ;
+    rdfs:label "Exercise Intolerance" .
+
+:PulmonaryHypertension rdf:type :Disease ;
+    rdfs:label "Pulmonary Hypertension" ;
+    :associatedWithDisease :HeartFailureWithPreservedEjectionFraction .
+
+:Pathophysiology rdf:type :Pathway ;
+    rdfs:label "Pathophysiology of HFpEF" ;
+    :associatedWithDisease :HeartFailureWithPreservedEjectionFraction .
+
+:OtherDrugs rdf:type :Drug ;
+    rdfs:label "Other Drugs" .

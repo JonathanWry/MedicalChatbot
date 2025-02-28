@@ -1,0 +1,51 @@
+:BA1 rdf:type :Drug ;
+     rdfs:label "BA 1" ;
+     :hasSideEffect :NegligibleLethality ;
+     :usedFor :DSCarcinosarcoma ;
+     :affectsMolecule :N2CyanoethyleneUrea ;
+     :interactsWith :Ifosfamide ;
+     :targetsGene :UnknownGene ;
+     :involvedIn :ImmunoActivityPathway ;
+     :associatedWithDisease :DSCarcinosarcoma ;
+     :expressedIn :WistarRat ;
+     :pathwayAssociatedWithDisease :CancerPathway .
+
+:Ifosfamide rdf:type :Drug ;
+            rdfs:label "Ifosfamide" ;
+            :usedFor :DSCarcinosarcoma ;
+            :hasSideEffect :Lethality18Percent ;
+            :interactsWith :BA1 ;
+            :targetsGene :UnknownGene ;
+            :involvedIn :CancerTreatmentPathway ;
+            :associatedWithDisease :DSCarcinosarcoma ;
+            :expressedIn :WistarRat ;
+            :pathwayAssociatedWithDisease :CancerPathway .
+
+:DSCarcinosarcoma rdf:type :Disease ;
+                  rdfs:label "DS Carcinosarcoma" ;
+                  :leadsToSymptom :RecoveryRate ;
+                  :associatedWithPathway :CancerPathway .
+
+:NegligibleLethality rdf:type :SideEffect ;
+                     rdfs:label "Negligible Lethality" .
+
+:Lethality18Percent rdf:type :SideEffect ;
+                    rdfs:label "18 Percent Lethality" .
+
+:RecoveryRate rdf:type :Symptom ;
+              rdfs:label "Recovery Rate" .
+
+:ImmunoActivityPathway rdf:type :Pathway ;
+                       rdfs:label "Immuno Activity Pathway" .
+
+:CancerTreatmentPathway rdf:type :Pathway ;
+                        rdfs:label "Cancer Treatment Pathway" .
+
+:CancerPathway rdf:type :Pathway ;
+               rdfs:label "Cancer Pathway" .
+
+:UnknownGene rdf:type :Gene ;
+             rdfs:label "Unknown Gene" .
+
+:WistarRat rdf:type :Anatomy ;
+            rdfs:label "Wistar Rat" .

@@ -1,0 +1,27 @@
+{
+    "relationships": [
+        "relatedTo",
+        "hasSideEffect",
+        "affectsMolecule",
+        "interactsWith",
+        "targetsGene",
+        "usedFor",
+        "involvedIn",
+        "geneInteractsWith",
+        "associatedWithPathway",
+        "associatedWithDisease",
+        "expressedIn",
+        "pathwayAssociatedWithDisease",
+        "leadsToSymptom"
+    ],
+    "entity_types": [
+        "Molecule",
+        "Drug",
+        "SideEffect",
+        "Gene",
+        "Disease",
+        "Pathway",
+        "Anatomy",
+        "Symptom"
+    ]
+}

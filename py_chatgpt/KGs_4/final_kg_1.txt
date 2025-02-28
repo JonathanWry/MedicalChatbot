@@ -1,0 +1,44 @@
+:HeartFailureWithPreservedEjectionFraction rdf:type :Disease ;
+    rdfs:label "Heart Failure with Preserved Ejection Fraction" ;
+    :relatedTo :Obesity, :Sedentariness, :CardiometabolicDisorders ;
+    :leadsToSymptom :Dyspnea, :ExerciseIntolerance ;
+    :associatedWithDisease :HeartFailure, :AtrialFibrillation ;
+    :hasSideEffect :Fatigue, :FluidRetention ;
+    :targetsGene :NPPB, :ANP ;
+    :involvedIn :PathwayOfHeartFailure ;
+    :pathwayAssociatedWithDisease :PathwayOfHeartFailure .
+
+:SGLT2i rdf:type :Drug ;
+    rdfs:label "Sodium-Glucose Cotransporter-2 Inhibitor" ;
+    :usedFor :HeartFailureWithPreservedEjectionFraction ;
+    :hasSideEffect :Hypoglycemia, :GenitourinaryInfections ;
+    :interactsWith :OtherDiabetesMedications ;
+    :affectsMolecule :GlucoseTransporters ;
+    :involvedIn :PathwayOfDiabetesManagement ;
+    :pathwayAssociatedWithDisease :PathwayOfDiabetesManagement .
+
+:Obesity rdf:type :Disease ;
+    rdfs:label "Obesity" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction ;
+    :leadsToSymptom :Fatigue ;
+    :targetsGene :LEP, :ADIPOQ ;
+    :involvedIn :PathwayOfMetabolicSyndrome ;
+    :pathwayAssociatedWithDisease :PathwayOfMetabolicSyndrome .
+
+:Sedentariness rdf:type :Disease ;
+    rdfs:label "Sedentariness" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction .
+
+:CardiometabolicDisorders rdf:type :Disease ;
+    rdfs:label "Cardiometabolic Disorders" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction .
+
+:Fatigue rdf:type :Symptom ;
+    rdfs:label "Fatigue" .
+
+:FluidRetention rdf:type :Symptom ;
+    rdfs:label "Fluid Retention" .
+
+:AtrialFibrillation rdf:type :Disease ;
+    rdfs:label "Atrial Fibrillation" ;
+    :associatedWithDisease :HeartFailureWithPreservedEjectionFraction .

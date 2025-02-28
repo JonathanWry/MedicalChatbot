@@ -1,0 +1,53 @@
+:HeartFailureWithPreservedEjectionFraction rdf:type :Disease ;
+    rdfs:label "Heart Failure with Preserved Ejection Fraction" ;
+    :relatedTo :Obesity, :Sedentariness, :CardiometabolicDisorders ;
+    :leadsToSymptom :Dyspnea, :ExerciseIntolerance, :Fatigue, :FluidRetention ;
+    :associatedWithDisease :HeartFailure, :PulmonaryHypertension ;
+    :hasSideEffect :Fatigue, :FluidRetention ;
+    :usedFor :SGLT2Inhibitor .
+
+:SGLT2Inhibitor rdf:type :Drug ;
+    rdfs:label "Sodium-Glucose Cotransporter-2 Inhibitor" ;
+    :usedFor :HeartFailureWithPreservedEjectionFraction ;
+    :hasSideEffect :Hypoglycemia, :Dehydration ;
+    :interactsWith :Diuretics .
+
+:Obesity rdf:type :Disease ;
+    rdfs:label "Obesity" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction ;
+    :leadsToSymptom :Fatigue .
+
+:Diuretics rdf:type :Drug ;
+    rdfs:label "Diuretics" ;
+    :usedFor :HeartFailureWithPreservedEjectionFraction ;
+    :hasSideEffect :ElectrolyteImbalance .
+
+:Fatigue rdf:type :Symptom ;
+    rdfs:label "Fatigue" .
+
+:FluidRetention rdf:type :Symptom ;
+    rdfs:label "Fluid Retention" .
+
+:Sedentariness rdf:type :Disease ;
+    rdfs:label "Sedentariness" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction .
+
+:CardiometabolicDisorders rdf:type :Disease ;
+    rdfs:label "Cardiometabolic Disorders" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction .
+
+:PulmonaryHypertension rdf:type :Disease ;
+    rdfs:label "Pulmonary Hypertension" ;
+    :associatedWithDisease :HeartFailureWithPreservedEjectionFraction .
+
+:ExerciseIntolerance rdf:type :Symptom ;
+    rdfs:label "Exercise Intolerance" .
+
+:Hypoglycemia rdf:type :SideEffect ;
+    rdfs:label "Hypoglycemia" .
+
+:Dehydration rdf:type :SideEffect ;
+    rdfs:label "Dehydration" .
+
+:ElectrolyteImbalance rdf:type :SideEffect ;
+    rdfs:label "Electrolyte Imbalance" .

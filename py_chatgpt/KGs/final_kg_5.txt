@@ -1,0 +1,50 @@
+:HeartFailureWithPreservedEjectionFraction rdf:type :Disease ;
+    rdfs:label "Heart Failure with Preserved Ejection Fraction" ;
+    :relatedTo :Obesity, :Hypertension, :Diabetes, :SedentaryLifestyle ;
+    :leadsToSymptom :Dyspnea, :ExerciseIntolerance ;
+    :associatedWithDisease :CardiovascularDisease, :PulmonaryHypertension ;
+    :hasSideEffect :Fatigue, :FluidRetention ;
+    :involvedIn :PathwayOfHeartFailure ;
+    :hasRiskFactor :Obesity, :Hypertension, :Diabetes, :SedentaryLifestyle .
+
+:SGLT2Inhibitor rdf:type :Drug ;
+    rdfs:label "Sodium-Glucose Cotransporter-2 Inhibitor" ;
+    :usedFor :HeartFailureWithPreservedEjectionFraction ;
+    :hasSideEffect :Hypoglycemia, :GenitourinaryInfections ;
+    :interactsWith :Diuretics ;
+    :affectsMolecule :GlucoseTransporters ;
+    :involvedIn :PathwayOfGlycemicControl .
+
+:Diuretics rdf:type :Drug ;
+    rdfs:label "Diuretics" ;
+    :usedFor :HeartFailureWithPreservedEjectionFraction ;
+    :hasSideEffect :ElectrolyteImbalance, :Dehydration ;
+    :involvedIn :PathwayOfFluidManagement .
+
+:Obesity rdf:type :Disease ;
+    rdfs:label "Obesity" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction ;
+    :leadsToSymptom :IncreasedFatigue ;
+    :associatedWithDisease :MetabolicSyndrome .
+
+:Hypertension rdf:type :Disease ;
+    rdfs:label "Hypertension" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction ;
+    :leadsToSymptom :Headaches ;
+    :associatedWithDisease :CardiovascularDisease .
+
+:Diabetes rdf:type :Disease ;
+    rdfs:label "Diabetes" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction ;
+    :leadsToSymptom :IncreasedThirst ;
+    :associatedWithDisease :MetabolicSyndrome .
+
+:SedentaryLifestyle rdf:type :Disease ;
+    rdfs:label "Sedentary Lifestyle" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction .
+
+:CardiovascularDisease rdf:type :Disease ;
+    rdfs:label "Cardiovascular Disease" .
+
+:PulmonaryHypertension rdf:type :Disease ;
+    rdfs:label "Pulmonary Hypertension" .

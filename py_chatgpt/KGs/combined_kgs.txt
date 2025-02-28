@@ -1,0 +1,251 @@
+### KG 1
+```
+:HeartFailureWithPreservedEjectionFraction rdf:type :Disease ;
+    rdfs:label "Heart Failure with Preserved Ejection Fraction" ;
+    :relatedTo :Obesity, :Sedentariness, :CardiometabolicDisorders ;
+    :leadsToSymptom :Dyspnea, :ExerciseIntolerance ;
+    :associatedWithDisease :HeartFailure, :PulmonaryHypertension ;
+    :hasSideEffect :Fatigue, :Cough .
+
+:SGLT2i rdf:type :Drug ;
+    rdfs:label "Sodium-Glucose Cotransporter-2 Inhibitor" ;
+    :usedFor :HeartFailureWithPreservedEjectionFraction ;
+    :hasSideEffect :Hypoglycemia, :GenitourinaryInfections ;
+    :interactsWith :OtherDiabeticMedications ;
+    :involvedIn :PathwayOfHeartFailureTreatment .
+
+:Obesity rdf:type :Disease ;
+    rdfs:label "Obesity" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction ;
+    :leadsToSymptom :ShortnessOfBreath ;
+    :associatedWithDisease :MetabolicSyndrome .
+
+:Sedentariness rdf:type :Disease ;
+    rdfs:label "Sedentariness" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction ;
+    :associatedWithDisease :Obesity .
+
+:CardiometabolicDisorders rdf:type :Disease ;
+    rdfs:label "Cardiometabolic Disorders" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction .
+
+:Dyspnea rdf:type :Symptom ;
+    rdfs:label "Dyspnea" .
+
+:ExerciseIntolerance rdf:type :Symptom ;
+    rdfs:label "Exercise Intolerance" .
+
+:Fatigue rdf:type :Symptom ;
+    rdfs:label "Fatigue" .
+
+:Cough rdf:type :Symptom ;
+    rdfs:label "Cough" .
+
+:PulmonaryHypertension rdf:type :Disease ;
+    rdfs:label "Pulmonary Hypertension" ;
+    :associatedWithDisease :HeartFailureWithPreservedEjectionFraction .
+
+:OtherDiabeticMedications rdf:type :Drug ;
+    rdfs:label "Other Diabetic Medications" ;
+    :interactsWith :SGLT2i .
+
+:PathwayOfHeartFailureTreatment rdf:type :Pathway ;
+    rdfs:label "Pathway of Heart Failure Treatment" .
+
+:MetabolicSyndrome rdf:type :Disease ;
+    rdfs:label "Metabolic Syndrome" ;
+    :relatedTo :Obesity .
+```
+### KG 2
+```
+:HeartFailureWithPreservedEjectionFraction rdf:type :Disease ;
+    rdfs:label "Heart Failure with Preserved Ejection Fraction" ;
+    :relatedTo :Obesity, :Sedentariness, :CardiometabolicDisorders ;
+    :leadsToSymptom :Dyspnea, :ExerciseIntolerance ;
+    :associatedWithDisease :HeartFailure, :Hypertension, :AtrialFibrillation ;
+    :hasSideEffect :Hypotension ;
+    :associatedWithPathway :InflammationPathway, :VascularFunctionPathway ;
+    :associatedWithDisease :CoronaryArteryDisease .
+
+:SGLT2Inhibitor rdf:type :Drug ;
+    rdfs:label "Sodium-Glucose Cotransporter-2 Inhibitor" ;
+    :usedFor :HeartFailureWithPreservedEjectionFraction ;
+    :hasSideEffect :Hypoglycemia, :GenitourinaryInfections, :Dehydration ;
+    :interactsWith :OtherAntidiabeticDrugs ;
+    :affectsMolecule :GlucoseTransporters ;
+    :involvedIn :MetabolicPathway ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction .
+
+:Obesity rdf:type :Disease ;
+    rdfs:label "Obesity" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction ;
+    :associatedWithDisease :Diabetes, :Hypertension ;
+    :leadsToSymptom :Fatigue ;
+    :associatedWithPathway :MetabolicPathway ;
+    :affectsMolecule :Adipokines .
+
+:Sedentariness rdf:type :Disease ;
+    rdfs:label "Sedentariness" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction .
+
+:CardiometabolicDisorders rdf:type :Disease ;
+    rdfs:label "Cardiometabolic Disorders" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction .
+
+:Dyspnea rdf:type :Symptom ;
+    rdfs:label "Dyspnea" ;
+    :leadsToSymptom :Fatigue .
+
+:ExerciseIntolerance rdf:type :Symptom ;
+    rdfs:label "Exercise Intolerance" ;
+    :associatedWithDisease :HeartFailureWithPreservedEjectionFraction .
+```
+### KG 3
+```
+:HeartFailureWithPreservedEjectionFraction rdf:type :Disease ;
+rdfs:label "Heart Failure with Preserved Ejection Fraction" ;
+:relatedTo :Obesity, :Sedentariness, :CardiometabolicDisorders ;
+:leadsToSymptom :Dyspnea, :ExerciseIntolerance ;
+:associatedWithDisease :HeartFailure, :AtrialFibrillation ;
+:usedFor :HeartFailure ;
+:pathwayAssociatedWithDisease :PathwayOfHeartFailureTreatment .
+
+:SGLT2i rdf:type :Drug ;
+rdfs:label "Sodium-Glucose Cotransporter-2 Inhibitor" ;
+:usedFor :HeartFailureWithPreservedEjectionFraction ;
+:hasSideEffect :Hypotension, :GenitourinaryInfections ;
+:interactsWith :OtherDrugs ;
+:affectsMolecule :GlucoseTransporters ;
+:involvedIn :PathwayOfHeartFailureTreatment .
+
+:Obesity rdf:type :Disease ;
+rdfs:label "Obesity" ;
+:relatedTo :HeartFailureWithPreservedEjectionFraction ;
+:associatedWithDisease :Diabetes, :Hypertension ;
+:leadsToSymptom :ExerciseIntolerance .
+
+:Sedentariness rdf:type :Disease ;
+rdfs:label "Sedentariness" ;
+:relatedTo :HeartFailureWithPreservedEjectionFraction ;
+:leadsToSymptom :Dyspnea .
+
+:CardiometabolicDisorders rdf:type :Disease ;
+rdfs:label "Cardiometabolic Disorders" ;
+:relatedTo :HeartFailureWithPreservedEjectionFraction ;
+:leadsToSymptom :Fatigue .
+
+:Dyspnea rdf:type :Symptom ;
+rdfs:label "Dyspnea" .
+
+:ExerciseIntolerance rdf:type :Symptom ;
+rdfs:label "Exercise Intolerance" .
+
+:AtrialFibrillation rdf:type :Disease ;
+rdfs:label "Atrial Fibrillation" .
+
+:Hypotension rdf:type :SideEffect ;
+rdfs:label "Hypotension" .
+
+:GenitourinaryInfections rdf:type :SideEffect ;
+rdfs:label "Genitourinary Infections" .
+
+:PathwayOfHeartFailureTreatment rdf:type :Pathway ;
+rdfs:label "Pathway of Heart Failure Treatment" .
+```
+### KG 4
+```
+:HeartFailureWithPreservedEjectionFraction rdf:type :Disease ;
+    rdfs:label "Heart Failure with Preserved Ejection Fraction" ;
+    :relatedTo :Obesity, :Sedentariness, :CardiometabolicDisorders ;
+    :leadsToSymptom :Dyspnea, :ExerciseIntolerance ;
+    :associatedWithDisease :HeartFailure ;
+    :hasSideEffect :Hypoglycemia, :Dehydration ;
+    :interactsWith :SGLT2Inhibitor .
+
+:SGLT2Inhibitor rdf:type :Drug ;
+    rdfs:label "Sodium-Glucose Cotransporter-2 Inhibitor" ;
+    :usedFor :HeartFailureWithPreservedEjectionFraction ;
+    :hasSideEffect :Hypoglycemia, :Dehydration ;
+    :interactsWith :OtherDrugs .
+
+:Obesity rdf:type :Disease ;
+    rdfs:label "Obesity" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction ;
+    :associatedWithDisease :Diabetes ;
+    :hasSideEffect :CardiovascularDisease .
+
+:Dyspnea rdf:type :Symptom ;
+    rdfs:label "Dyspnea" ;
+    :leadsToSymptom :HeartFailureWithPreservedEjectionFraction .
+
+:ExerciseIntolerance rdf:type :Symptom ;
+    rdfs:label "Exercise Intolerance" ;
+    :leadsToSymptom :HeartFailureWithPreservedEjectionFraction .
+
+:CardiometabolicDisorders rdf:type :Disease ;
+    rdfs:label "Cardiometabolic Disorders" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction .
+
+:Hypoglycemia rdf:type :SideEffect ;
+    rdfs:label "Hypoglycemia" .
+
+:Dehydration rdf:type :SideEffect ;
+    rdfs:label "Dehydration" .
+
+:CardiovascularDisease rdf:type :Disease ;
+    rdfs:label "Cardiovascular Disease" ;
+    :relatedTo :Obesity .
+```
+### KG 5
+```
+:HeartFailureWithPreservedEjectionFraction rdf:type :Disease ;
+    rdfs:label "Heart Failure with Preserved Ejection Fraction" ;
+    :relatedTo :Obesity, :Hypertension, :Diabetes, :SedentaryLifestyle ;
+    :leadsToSymptom :Dyspnea, :ExerciseIntolerance ;
+    :associatedWithDisease :CardiovascularDisease, :PulmonaryHypertension ;
+    :hasSideEffect :Fatigue, :FluidRetention ;
+    :involvedIn :PathwayOfHeartFailure ;
+    :hasRiskFactor :Obesity, :Hypertension, :Diabetes, :SedentaryLifestyle .
+
+:SGLT2Inhibitor rdf:type :Drug ;
+    rdfs:label "Sodium-Glucose Cotransporter-2 Inhibitor" ;
+    :usedFor :HeartFailureWithPreservedEjectionFraction ;
+    :hasSideEffect :Hypoglycemia, :GenitourinaryInfections ;
+    :interactsWith :Diuretics ;
+    :affectsMolecule :GlucoseTransporters ;
+    :involvedIn :PathwayOfGlycemicControl .
+
+:Diuretics rdf:type :Drug ;
+    rdfs:label "Diuretics" ;
+    :usedFor :HeartFailureWithPreservedEjectionFraction ;
+    :hasSideEffect :ElectrolyteImbalance, :Dehydration ;
+    :involvedIn :PathwayOfFluidManagement .
+
+:Obesity rdf:type :Disease ;
+    rdfs:label "Obesity" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction ;
+    :leadsToSymptom :IncreasedFatigue ;
+    :associatedWithDisease :MetabolicSyndrome .
+
+:Hypertension rdf:type :Disease ;
+    rdfs:label "Hypertension" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction ;
+    :leadsToSymptom :Headaches ;
+    :associatedWithDisease :CardiovascularDisease .
+
+:Diabetes rdf:type :Disease ;
+    rdfs:label "Diabetes" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction ;
+    :leadsToSymptom :IncreasedThirst ;
+    :associatedWithDisease :MetabolicSyndrome .
+
+:SedentaryLifestyle rdf:type :Disease ;
+    rdfs:label "Sedentary Lifestyle" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction .
+
+:CardiovascularDisease rdf:type :Disease ;
+    rdfs:label "Cardiovascular Disease" .
+
+:PulmonaryHypertension rdf:type :Disease ;
+    rdfs:label "Pulmonary Hypertension" .
+```

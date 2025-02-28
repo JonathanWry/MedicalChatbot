@@ -1,0 +1,65 @@
+:HeartFailureWithPreservedEjectionFraction rdf:type :Disease ;
+    rdfs:label "Heart Failure with Preserved Ejection Fraction" ;
+    :relatedTo :Obesity, :Sedentariness, :CardiometabolicDisorders ;
+    :leadsToSymptom :Dyspnea, :ExerciseIntolerance ;
+    :associatedWithDisease :HeartFailure, :PulmonaryHypertension ;
+    :hasSideEffect :Fatigue, :FluidRetention ;
+    :targetsGene :NPPB, :BNP ;
+    :involvedIn :PathwayInflammation, :PathwayMetabolism .
+
+:SGLT2i rdf:type :Drug ;
+    rdfs:label "Sodium-Glucose Cotransporter-2 Inhibitor" ;
+    :usedFor :HeartFailureWithPreservedEjectionFraction ;
+    :hasSideEffect :Hypoglycemia, :Dehydration ;
+    :interactsWith :OtherDiuretics ;
+    :affectsMolecule :GlucoseTransporters ;
+    :involvedIn :PathwayGlycolysis .
+
+:Obesity rdf:type :Disease ;
+    rdfs:label "Obesity" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction ;
+    :leadsToSymptom :Fatigue ;
+    :targetsGene :LEP, :ADIPOQ ;
+    :involvedIn :PathwayMetabolism .
+
+:Sedentariness rdf:type :Disease ;
+    rdfs:label "Sedentariness" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction .
+
+:CardiometabolicDisorders rdf:type :Disease ;
+    rdfs:label "Cardiometabolic Disorders" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction .
+
+:Fatigue rdf:type :Symptom ;
+    rdfs:label "Fatigue" .
+
+:FluidRetention rdf:type :SideEffect ;
+    rdfs:label "Fluid Retention" .
+
+:OtherDiuretics rdf:type :Drug ;
+    rdfs:label "Other Diuretics" ;
+    :interactsWith :SGLT2i .
+
+:NPPB rdf:type :Gene ;
+    rdfs:label "Natriuretic Peptide B" .
+
+:BNP rdf:type :Gene ;
+    rdfs:label "B-type Natriuretic Peptide" .
+
+:LEP rdf:type :Gene ;
+    rdfs:label "Leptin" .
+
+:ADIPOQ rdf:type :Gene ;
+    rdfs:label "Adiponectin" .
+
+:GlucoseTransporters rdf:type :Molecule ;
+    rdfs:label "Glucose Transporters" .
+
+:PathwayInflammation rdf:type :Pathway ;
+    rdfs:label "Inflammation Pathway" .
+
+:PathwayMetabolism rdf:type :Pathway ;
+    rdfs:label "Metabolism Pathway" .
+
+:PathwayGlycolysis rdf:type :Pathway ;
+    rdfs:label "Glycolysis Pathway" .

@@ -1,0 +1,48 @@
+### Final KG
+"""```turtle
+:BA1 rdf:type :Drug ;
+    rdfs:label "BA 1" ;
+    :affectsMolecule :N2CyanoethyleneUrea ;
+    :usedFor :DSCarcinosarcoma ;
+    :hasSideEffect :NegligibleLethality ;
+    :interactsWith :Ifosfamide ;
+    :involvedIn :ImmunologicalActivity ;
+    :targetsGene :LeucocyteGene .
+
+:Ifosfamide rdf:type :Drug ;
+    rdfs:label "Ifosfamide" ;
+    :usedFor :DSCarcinosarcoma ;
+    :hasSideEffect :Lethality18Percent ;
+    :interactsWith :BA1 ;
+    :involvedIn :CancerTreatmentPathway ;
+    :targetsGene :LeucocyteGene .
+
+:DSCarcinosarcoma rdf:type :Disease ;
+    rdfs:label "DS Carcinosarcoma" ;
+    :leadsToSymptom :RecoveryRate ;
+    :associatedWithPathway :CancerTreatmentPathway .
+
+:NegligibleLethality rdf:type :SideEffect ;
+    rdfs:label "Negligible Lethality" .
+
+:Lethality18Percent rdf:type :SideEffect ;
+    rdfs:label "Lethality (18 percent)" .
+
+:RecoveryRate rdf:type :Symptom ;
+    rdfs:label "Recovery Rate" .
+
+:N2CyanoethyleneUrea rdf:type :Molecule ;
+    rdfs:label "N-(2-cyanoethylene)-urea" .
+
+:ImmunologicalActivity rdf:type :Pathway ;
+    rdfs:label "Immunological Activity" .
+
+:CancerTreatmentPathway rdf:type :Pathway ;
+    rdfs:label "Cancer Treatment Pathway" .
+
+:LeucocyteGene rdf:type :Gene ;
+    rdfs:label "Leucocyte Gene" .
+
+:WistarRats rdf:type :Anatomy ;
+    rdfs:label "Wistar Rats" .
+```

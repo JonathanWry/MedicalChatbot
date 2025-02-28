@@ -1,0 +1,54 @@
+:HeartFailureWithPreservedEjectionFraction rdf:type :Disease ;
+    rdfs:label "Heart Failure with Preserved Ejection Fraction" ;
+    :relatedTo :Obesity, :Sedentariness, :CardiometabolicDisorders ;
+    :leadsToSymptom :Dyspnea, :ExerciseIntolerance ;
+    :associatedWithDisease :HeartFailure, :AtrialFibrillation ;
+    :hasSideEffect :Fatigue, :FluidRetention ;
+    :targetsGene :NPPB, :BNP ;
+    :involvedIn :PathwayOfHeartFailure ;
+    :hasTreatment :SGLT2i .
+
+:SGLT2i rdf:type :Drug ;
+    rdfs:label "Sodium-Glucose Cotransporter-2 Inhibitor" ;
+    :usedFor :HeartFailureWithPreservedEjectionFraction ;
+    :hasSideEffect :Hypoglycemia, :GenitourinaryInfections ;
+    :interactsWith :Diuretics ;
+    :involvedIn :PathwayOfHeartFailure .
+
+:Obesity rdf:type :Disease ;
+    rdfs:label "Obesity" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction ;
+    :leadsToSymptom :Fatigue ;
+    :involvedIn :PathwayOfHeartFailure .
+
+:Sedentariness rdf:type :Disease ;
+    rdfs:label "Sedentariness" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction ;
+    :involvedIn :PathwayOfHeartFailure .
+
+:CardiometabolicDisorders rdf:type :Disease ;
+    rdfs:label "Cardiometabolic Disorders" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction ;
+    :involvedIn :PathwayOfHeartFailure .
+
+:Fatigue rdf:type :Symptom ;
+    rdfs:label "Fatigue" .
+
+:FluidRetention rdf:type :SideEffect ;
+    rdfs:label "Fluid Retention" .
+
+:ExerciseIntolerance rdf:type :Symptom ;
+    rdfs:label "Exercise Intolerance" .
+
+:AtrialFibrillation rdf:type :Disease ;
+    rdfs:label "Atrial Fibrillation" ;
+    :associatedWithDisease :HeartFailureWithPreservedEjectionFraction .
+
+:NPPB rdf:type :Gene ;
+    rdfs:label "Natriuretic Peptide B" .
+
+:BNP rdf:type :Gene ;
+    rdfs:label "B-type Natriuretic Peptide" .
+
+:PathwayOfHeartFailure rdf:type :Pathway ;
+    rdfs:label "Pathway of Heart Failure" .

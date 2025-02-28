@@ -1,0 +1,242 @@
+### KG 1
+```
+:Phosphodiesterase rdf:type :Enzyme ;
+                   rdfs:label "Cyclic Nucleotide Phosphodiesterase" ;
+                   :involvedIn :Pathway1 ;
+                   :targetsGene :Gene1 ;
+                   :affectsMolecule :Mg, :Mn, :Co, :Ca, :Zn, :Ni, :EDTA .
+
+:Gene1 rdf:type :Gene ;
+       rdfs:label "Gene Associated with Phosphodiesterase" ;
+       :associatedWithDisease :NonMetastasizingTumor, :MetastasizingTumor .
+
+:Pathway1 rdf:type :Pathway ;
+          rdfs:label "Phosphodiesterase Activity Pathway" ;
+          :pathwayAssociatedWithDisease :NonMetastasizingTumor, :MetastasizingTumor .
+
+:NonMetastasizingTumor rdf:type :Disease ;
+                       rdfs:label "Nonmetastasizing Rat Mammary Carcinoma" ;
+                       :hasSideEffect :InhibitionEffect ;
+                       :leadsToSymptom :HigherHydrolysisRate .
+
+:MetastasizingTumor rdf:type :Disease ;
+                    rdfs:label "Spontaneously Metastasizing Rat Mammary Carcinoma" ;
+                    :hasSideEffect :InhibitionEffect ;
+                    :leadsToSymptom :LowerHydrolysisRate .
+
+:HigherHydrolysisRate rdf:type :Symptom ;
+                     rdfs:label "Higher Hydrolysis Rate of Purine Nucleotides" .
+
+:LowerHydrolysisRate rdf:type :Symptom ;
+                    rdfs:label "Lower Hydrolysis Rate of Purine Nucleotides" .
+
+:InhibitionEffect rdf:type :SideEffect ;
+                 rdfs:label "Enzyme Activity Inhibition" .
+
+:Theophylline rdf:type :Drug ;
+              rdfs:label "Theophylline" ;
+              :hasSideEffect :InhibitionEffect ;
+              :usedFor :NonMetastasizingTumor, :MetastasizingTumor ;
+              :interactsWith :Caffeine, :Ro20_1724 .
+
+:Caffeine rdf:type :Drug ;
+          rdfs:label "Caffeine" ;
+          :hasSideEffect :InhibitionEffect ;
+          :usedFor :NonMetastasizingTumor, :MetastasizingTumor ;
+          :interactsWith :Theophylline, :Ro20_1724 .
+
+:Ro20_1724 rdf:type :Drug ;
+           rdfs:label "D,L-4-(3-butoxy-4-methoxybenzyl)-2-imidazolidinone" ;
+           :hasSideEffect :InhibitionEffect ;
+           :usedFor :NonMetastasizingTumor, :MetastasizingTumor ;
+           :interactsWith :Theophylline, :Caffeine .
+
+:Mg rdf:type :Molecule ;
+    rdfs:label "Magnesium" ;
+    :relatedTo :Phosphodiesterase .
+
+:Mn rdf:type :Molecule ;
+    rdfs:label "Manganese" ;
+    :relatedTo :Phosphodiesterase .
+
+:Co rdf:type :Molecule ;
+    rdfs:label "Cobalt" ;
+    :relatedTo :Phosphodiesterase .
+
+:Ca rdf:type :Molecule ;
+    rdfs:label "Calcium" ;
+    :relatedTo :Phosphodiesterase .
+
+:Zn rdf:type :Molecule ;
+    rdfs:label "Zinc" ;
+    :relatedTo :Phosphodiesterase .
+
+:Ni rdf:type :Molecule ;
+    rdfs:label "Nickel" ;
+    :relatedTo :Phosphodiesterase .
+
+:EDTA rdf:type :Molecule ;
+      rdfs:label "Ethylenediaminetetraacetic acid" ;
+      :relatedTo :Phosphodiesterase .
+```
+### KG 2
+```
+:Phosphodiesterase rdf:type :Enzyme ;
+                   rdfs:label "Cyclic Nucleotide Phosphodiesterase" ;
+                   :relatedTo :NonmetastasizingCarcinoma, :MetastasizingCarcinoma ;
+                   :interactsWith :Inhibitor, :Inhibitor2, :Inhibitor3, :Stimulator1, :Stimulator2, :Stimulator3, :Suppressor1, :Suppressor2, :Suppressor3, :EDTA ;
+                   :targetsGene :Gene1, :Gene2 .
+
+:NonmetastasizingCarcinoma rdf:type :Disease ;
+                           rdfs:label "Nonmetastasizing Rat Mammary Carcinoma" ;
+                           :hasSideEffect :AlteredEnzymeActivity ;
+                           :leadsToSymptom :AlteredEnzymeActivity ;
+                           :associatedWithDisease :Phosphodiesterase .
+
+:MetastasizingCarcinoma rdf:type :Disease ;
+                        rdfs:label "Spontaneously Metastasizing Rat Mammary Carcinoma" ;
+                        :hasSideEffect :AlteredEnzymeActivity ;
+                        :leadsToSymptom :AlteredEnzymeActivity ;
+                        :associatedWithDisease :Phosphodiesterase .
+
+:PurineNucleotide rdf:type :Molecule ;
+                  rdfs:label "Cyclic Purine Nucleotides" .
+
+:PyrimidineNucleotide rdf:type :Molecule ;
+                     rdfs:label "Cyclic Pyrimidine Nucleotides" .
+
+:Inhibitor rdf:type :Drug ;
+           rdfs:label "Theophylline" ;
+           :usedFor :Phosphodiesterase ;
+           :hasSideEffect :AlteredEnzymeActivity .
+
+:Inhibitor2 rdf:type :Drug ;
+            rdfs:label "Caffeine" ;
+            :usedFor :Phosphodiesterase ;
+            :hasSideEffect :AlteredEnzymeActivity .
+
+:Inhibitor3 rdf:type :Drug ;
+            rdfs:label "D,L-4-(3-butoxy-4-methoxybenzyl)-2-imidazolidinone" ;
+            :usedFor :Phosphodiesterase ;
+            :hasSideEffect :AlteredEnzymeActivity .
+
+:Stimulator1 rdf:type :Molecule ;
+             rdfs:label "Mg++" ;
+             :affectsMolecule :Phosphodiesterase .
+
+:Stimulator2 rdf:type :Molecule ;
+             rdfs:label "Mn++" ;
+             :affectsMolecule :Phosphodiesterase .
+
+:Stimulator3 rdf:type :Molecule ;
+             rdfs:label "Co++" ;
+             :affectsMolecule :Phosphodiesterase .
+
+:Suppressor1 rdf:type :Molecule ;
+             rdfs:label "Ca++" ;
+             :affectsMolecule :Phosphodiesterase .
+
+:Suppressor2 rdf:type :Molecule ;
+             rdfs:label "Zn++" ;
+             :affectsMolecule :Phosphodiesterase .
+
+:Suppressor3 rdf:type :Molecule ;
+             rdfs:label "Ni++" ;
+             :affectsMolecule :Phosphodiesterase .
+
+:EDTA rdf:type :Molecule ;
+      rdfs:label "EDTA" ;
+      :affectsMolecule :Phosphodiesterase .
+
+:Gene1 rdf:type :Gene ;
+       rdfs:label "Gene1" .
+
+:Gene2 rdf:type :Gene ;
+       rdfs:label "Gene2" .
+```
+### KG 3
+```
+:Phosphodiesterase rdf:type :Enzyme ;
+                   rdfs:label "Cyclic Nucleotide Phosphodiesterase" ;
+                   :relatedTo :NonmetastasizingTumor, :MetastasizingTumor ;
+                   :affectedBy :Theophylline, :Caffeine, :Ro20-1724, :Mg, :Mn, :Co, :Ca, :Zn, :Ni, :EDTA, :EthyleneGlycolBis ;
+                   :hasOptimalPH "8.0" ;
+                   :hydrolyzes :CyclicPurineNucleotides, :CyclicPyrimidineNucleotides ;
+                   :hasMichaelisConstant :LowKm, :HighKm ;
+                   :stimulatedBy :Mg, :Mn, :Co ;
+                   :suppressedBy :Ca, :Zn, :Ni ;
+                   :exhibitsActivity :HigherHydrolysisRate .
+
+:HigherHydrolysisRate rdf:type :Measurement ;
+                     rdfs:label "Higher Hydrolysis Rate in Nonmetastasizing Tumor" .
+
+:LowKm rdf:type :Pathway ;
+       rdfs:label "Low Km Enzyme" ;
+       :affectedBy :Mg, :Mn .
+
+:HighKm rdf:type :Pathway ;
+        rdfs:label "High Km Enzyme" ;
+        :affectedBy :Mg, :Mn .
+
+:NonmetastasizingTumor rdf:type :Tumor ;
+                       rdfs:label "Nonmetastasizing Rat Mammary Carcinoma" ;
+                       :hasEnzymeActivity :Phosphodiesterase ;
+                       :hydrolysisRate :HigherThanMetastasizingTumor .
+
+:MetastasizingTumor rdf:type :Tumor ;
+                    rdfs:label "Spontaneously Metastasizing Rat Mammary Carcinoma" ;
+                    :hasEnzymeActivity :Phosphodiesterase .
+
+:Theophylline rdf:type :Drug ;
+              rdfs:label "Theophylline" ;
+              :hasSideEffect :EnzymeInhibition .
+
+:Caffeine rdf:type :Drug ;
+           rdfs:label "Caffeine" ;
+           :hasSideEffect :EnzymeInhibition .
+
+:Ro20-1724 rdf:type :Drug ;
+           rdfs:label "D,L-4-(3-butoxy-4-methoxybenzyl)-2-imidazolidinone" ;
+           :hasSideEffect :EnzymeInhibition .
+
+:Mg rdf:type :Molecule ;
+    rdfs:label "Magnesium Ion" ;
+    :stimulates :Phosphodiesterase .
+
+:Mn rdf:type :Molecule ;
+    rdfs:label "Manganese Ion" ;
+    :stimulates :Phosphodiesterase .
+
+:Co rdf:type :Molecule ;
+    rdfs:label "Cobalt Ion" ;
+    :stimulates :Phosphodiesterase .
+
+:Ca rdf:type :Molecule ;
+    rdfs:label "Calcium Ion" ;
+    :suppresses :Phosphodiesterase .
+
+:Zn rdf:type :Molecule ;
+    rdfs:label "Zinc Ion" ;
+    :suppresses :Phosphodiesterase .
+
+:Ni rdf:type :Molecule ;
+    rdfs:label "Nickel Ion" ;
+    :suppresses :Phosphodiesterase .
+
+:EDTA rdf:type :Molecule ;
+      rdfs:label "Ethylenediaminetetraacetic Acid" ;
+      :hasSideEffect :EnzymeInhibition .
+
+:EthyleneGlycolBis rdf:type :Molecule ;
+                   rdfs:label "Ethylene Glycol Bis(beta-aminoethyl ether)-N,N,N',N'-Tetraacetic Acid" ;
+                   :hasSideEffect :EnzymeInhibition .
+
+:CyclicPurineNucleotides rdf:type :Nucleotide ;
+                         rdfs:label "Cyclic Purine Nucleotides" .
+
+:CyclicPyrimidineNucleotides rdf:type :Nucleotide ;
+                             rdfs:label "Cyclic Pyrimidine Nucleotides" .
+
+:EnzymeInhibition rdf:type :SideEffect ;
+                  rdfs:label "Enzyme Inhibition" .
+```

@@ -1,0 +1,50 @@
+:HeartFailureWithPreservedEjectionFraction rdf:type :Disease ;
+    rdfs:label "Heart Failure with Preserved Ejection Fraction" ;
+    :relatedTo :Obesity, :Sedentariness, :CardiometabolicDisorders ;
+    :leadsToSymptom :Dyspnea, :ExerciseIntolerance ;
+    :associatedWithDisease :HeartFailure, :AtrialFibrillation ;
+    :incidenceRate "27 cases per 10,000 person-years" ;
+    :prevalenceTrend "Increasing" ;
+    :lifetimeRisk "1 in 10 adults" ;
+    :diagnosticCriteria "LVEF ≥ 50% and elevated natriuretic peptide levels" ;
+    :treatmentIncludes :SGLT2i, :LifestyleChanges ;
+    :hasPathophysiology :DiastolicDysfunction, :MyocardialStiffness .
+
+:SGLT2i rdf:type :Drug ;
+    rdfs:label "Sodium-Glucose Cotransporter-2 Inhibitor" ;
+    :usedFor :HeartFailureWithPreservedEjectionFraction ;
+    :hasSideEffect :Hypoglycemia, :GenitourinaryInfections ;
+    :interactsWith :OtherDiabetesMedications ;
+    :involvedIn :PathwaySGLT2iMechanism ;
+    :improves :ExerciseCapacity, :QualityOfLife .
+
+:Obesity rdf:type :Disease ;
+    rdfs:label "Obesity" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction ;
+    :associatedWithSymptom :ExerciseIntolerance ;
+    :associatedWithDisease :Diabetes ;
+    :contributesTo :HeartFailureWithPreservedEjectionFraction .
+
+:Dyspnea rdf:type :Symptom ;
+    rdfs:label "Dyspnea" ;
+    :leadsTo :HeartFailureWithPreservedEjectionFraction .
+
+:ExerciseIntolerance rdf:type :Symptom ;
+    rdfs:label "Exercise Intolerance" ;
+    :leadsTo :HeartFailureWithPreservedEjectionFraction .
+
+:AtrialFibrillation rdf:type :Disease ;
+    rdfs:label "Atrial Fibrillation" ;
+    :associatedWithDisease :HeartFailureWithPreservedEjectionFraction .
+
+:CardiometabolicDisorders rdf:type :Disease ;
+    rdfs:label "Cardiometabolic Disorders" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction .
+
+:DiastolicDysfunction rdf:type :Pathway ;
+    rdfs:label "Diastolic Dysfunction" ;
+    :associatedWithDisease :HeartFailureWithPreservedEjectionFraction .
+
+:MyocardialStiffness rdf:type :Pathway ;
+    rdfs:label "Myocardial Stiffness" ;
+    :associatedWithDisease :HeartFailureWithPreservedEjectionFraction .

@@ -1,0 +1,86 @@
+@prefix : <http://example.org/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+:Disease rdf:type owl:Class .
+:Drug rdf:type owl:Class .
+:SideEffect rdf:type owl:Class .
+:Symptom rdf:type owl:Class .
+:Gene rdf:type owl:Class .
+:Pathway rdf:type owl:Class .
+:Anatomy rdf:type owl:Class .
+:Molecule rdf:type owl:Class .
+
+:HeartFailure rdf:type :Disease ;
+    rdfs:label "Heart Failure" .
+
+:HFpEF rdf:type :Disease ;
+    rdfs:label "Heart Failure with Preserved Ejection Fraction" ;
+    :relatedTo :Obesity, :Hypertension, :Diabetes, :AtrialFibrillation ;
+    :leadsToSymptom :Dyspnea, :ExerciseIntolerance ;
+    :associatedWithDisease :PulmonaryHypertension, :KidneyDisease ;
+    :hasSideEffect :Fatigue, :Congestion .
+
+:SGLT2i rdf:type :Drug ;
+    rdfs:label "Sodium-Glucose Cotransporter-2 Inhibitor" ;
+    :usedFor :HFpEF ;
+    :hasSideEffect :Hypoglycemia, :GenitourinaryInfections ;
+    :interactsWith :Diuretics .
+
+:Diuretics rdf:type :Drug ;
+    rdfs:label "Diuretics" ;
+    :usedFor :HFpEF ;
+    :hasSideEffect :Dehydration, :ElectrolyteImbalance .
+
+:Obesity rdf:type :Disease ;
+    rdfs:label "Obesity" ;
+    :relatedTo :HFpEF .
+
+:Hypertension rdf:type :Disease ;
+    rdfs:label "Hypertension" ;
+    :relatedTo :HFpEF .
+
+:Diabetes rdf:type :Disease ;
+    rdfs:label "Diabetes" ;
+    :relatedTo :HFpEF .
+
+:AtrialFibrillation rdf:type :Disease ;
+    rdfs:label "Atrial Fibrillation" ;
+    :relatedTo :HFpEF .
+
+:PulmonaryHypertension rdf:type :Disease ;
+    rdfs:label "Pulmonary Hypertension" ;
+    :associatedWithDisease :HFpEF .
+
+:KidneyDisease rdf:type :Disease ;
+    rdfs:label "Kidney Disease" ;
+    :associatedWithDisease :HFpEF .
+
+:Dyspnea rdf:type :Symptom ;
+    rdfs:label "Dyspnea" ;
+    :leadsToSymptom :HFpEF .
+
+:ExerciseIntolerance rdf:type :Symptom ;
+    rdfs:label "Exercise Intolerance" ;
+    :leadsToSymptom :HFpEF .
+
+:Fatigue rdf:type :SideEffect ;
+    rdfs:label "Fatigue" ;
+    :hasSideEffect :HFpEF .
+
+:Congestion rdf:type :SideEffect ;
+    rdfs:label "Congestion" ;
+    :hasSideEffect :HFpEF .
+
+:Gene rdf:type :Gene ;
+    rdfs:label "Gene" ;
+    :targetsGene :SGLT2i .
+
+:Pathway rdf:type :Pathway ;
+    rdfs:label "Pathway" ;
+    :involvedIn :SGLT2i .
+
+:Anatomy rdf:type :Anatomy ;
+    rdfs:label "Anatomy" ;
+    :expressedIn :Gene .

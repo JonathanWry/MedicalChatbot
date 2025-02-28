@@ -1,0 +1,83 @@
+:Phosphodiesterase rdf:type :Enzyme ;
+                   rdfs:label "Cyclic Nucleotide Phosphodiesterase" ;
+                   :relatedTo :NonmetastasizingTumor, :MetastasizingTumor ;
+                   :affectedBy :Theophylline, :Caffeine, :Ro20-1724, :Mg, :Mn, :Co, :Ca, :Zn, :Ni, :EDTA, :EthyleneGlycolBis ;
+                   :hasOptimalPH "8.0" ;
+                   :hydrolyzes :CyclicPurineNucleotides, :CyclicPyrimidineNucleotides ;
+                   :hasMichaelisConstant :LowKm, :HighKm ;
+                   :stimulatedBy :Mg, :Mn, :Co ;
+                   :suppressedBy :Ca, :Zn, :Ni ;
+                   :exhibitsActivity :HigherHydrolysisRate .
+
+:HigherHydrolysisRate rdf:type :Measurement ;
+                     rdfs:label "Higher Hydrolysis Rate in Nonmetastasizing Tumor" .
+
+:LowKm rdf:type :Pathway ;
+       rdfs:label "Low Km Enzyme" ;
+       :affectedBy :Mg, :Mn .
+
+:HighKm rdf:type :Pathway ;
+        rdfs:label "High Km Enzyme" ;
+        :affectedBy :Mg, :Mn .
+
+:NonmetastasizingTumor rdf:type :Tumor ;
+                       rdfs:label "Nonmetastasizing Rat Mammary Carcinoma" ;
+                       :hasEnzymeActivity :Phosphodiesterase ;
+                       :hydrolysisRate :HigherThanMetastasizingTumor .
+
+:MetastasizingTumor rdf:type :Tumor ;
+                    rdfs:label "Spontaneously Metastasizing Rat Mammary Carcinoma" ;
+                    :hasEnzymeActivity :Phosphodiesterase .
+
+:Theophylline rdf:type :Drug ;
+              rdfs:label "Theophylline" ;
+              :hasSideEffect :EnzymeInhibition .
+
+:Caffeine rdf:type :Drug ;
+           rdfs:label "Caffeine" ;
+           :hasSideEffect :EnzymeInhibition .
+
+:Ro20-1724 rdf:type :Drug ;
+           rdfs:label "D,L-4-(3-butoxy-4-methoxybenzyl)-2-imidazolidinone" ;
+           :hasSideEffect :EnzymeInhibition .
+
+:Mg rdf:type :Molecule ;
+    rdfs:label "Magnesium Ion" ;
+    :stimulates :Phosphodiesterase .
+
+:Mn rdf:type :Molecule ;
+    rdfs:label "Manganese Ion" ;
+    :stimulates :Phosphodiesterase .
+
+:Co rdf:type :Molecule ;
+    rdfs:label "Cobalt Ion" ;
+    :stimulates :Phosphodiesterase .
+
+:Ca rdf:type :Molecule ;
+    rdfs:label "Calcium Ion" ;
+    :suppresses :Phosphodiesterase .
+
+:Zn rdf:type :Molecule ;
+    rdfs:label "Zinc Ion" ;
+    :suppresses :Phosphodiesterase .
+
+:Ni rdf:type :Molecule ;
+    rdfs:label "Nickel Ion" ;
+    :suppresses :Phosphodiesterase .
+
+:EDTA rdf:type :Molecule ;
+      rdfs:label "Ethylenediaminetetraacetic Acid" ;
+      :hasSideEffect :EnzymeInhibition .
+
+:EthyleneGlycolBis rdf:type :Molecule ;
+                   rdfs:label "Ethylene Glycol Bis(beta-aminoethyl ether)-N,N,N',N'-Tetraacetic Acid" ;
+                   :hasSideEffect :EnzymeInhibition .
+
+:CyclicPurineNucleotides rdf:type :Nucleotide ;
+                         rdfs:label "Cyclic Purine Nucleotides" .
+
+:CyclicPyrimidineNucleotides rdf:type :Nucleotide ;
+                             rdfs:label "Cyclic Pyrimidine Nucleotides" .
+
+:EnzymeInhibition rdf:type :SideEffect ;
+                  rdfs:label "Enzyme Inhibition" .

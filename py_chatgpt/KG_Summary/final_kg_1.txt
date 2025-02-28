@@ -1,0 +1,139 @@
+:WeaklyAcidicFraction rdf:type :Molecule ;
+    rdfs:label "Weakly Acidic Fraction" .
+
+:CigaretteSmoke rdf:type :Drug ;
+    rdfs:label "Cigarette Smoke" ;
+    :hasSideEffect :TumorPromotion .
+
+:TumorPromotion rdf:type :Disease ;
+    rdfs:label "Tumor Promotion" ;
+    :leadsToSymptom :Tumor .
+
+:Alkyl2Cyclopenten2ol1ones rdf:type :Molecule ;
+    rdfs:label "Alkyl-2-cyclopenten-2-ol-1-ones" .
+
+:Catechols rdf:type :Molecule ;
+    rdfs:label "Catechols" .
+
+:Hydroquinone rdf:type :Molecule ;
+    rdfs:label "Hydroquinone" .
+
+:FattyAcids rdf:type :Molecule ;
+    rdfs:label "Fatty Acids" .
+
+:Hydroxypyridines rdf:type :Molecule ;
+    rdfs:label "3-Hydroxypyridines" .
+
+:Catechol rdf:type :Molecule ;
+    rdfs:label "Catechol" ;
+    :hasSideEffect :InactiveTumorPromoter .
+
+:Hydroquinone rdf:type :Molecule ;
+    rdfs:label "Hydroquinone" ;
+    :hasSideEffect :InactiveTumorPromoter .
+
+:3Hydroxypyridine rdf:type :Molecule ;
+    rdfs:label "3-Hydroxypyridine" ;
+    :hasSideEffect :InactiveTumorPromoter .
+
+:6Methyl3Hydroxypyridine rdf:type :Molecule ;
+    rdfs:label "6-Methyl-3-hydroxypyridine" ;
+    :hasSideEffect :InactiveTumorPromoter .
+
+:LinolenicAcid rdf:type :Molecule ;
+    rdfs:label "Linolenic Acid" ;
+    :hasSideEffect :InactiveTumorPromoter .
+
+:LinoleicAcid rdf:type :Molecule ;
+    rdfs:label "Linoleic Acid" ;
+    :hasSideEffect :InactiveTumorPromoter .
+
+:BA1 rdf:type :Drug ;
+    rdfs:label "BA 1" ;
+    :hasSideEffect :TumorInhibition ;
+    :usedFor :DSCarcinosarcoma .
+
+:Ifosfamide rdf:type :Drug ;
+    rdfs:label "Ifosfamide" ;
+    :usedFor :DSCarcinosarcoma ;
+    :hasSideEffect :TumorInhibition .
+
+:DSCarcinosarcoma rdf:type :Disease ;
+    rdfs:label "DS Carcinosarcoma" ;
+    :leadsToSymptom :Recovery .
+
+:Recovery rdf:type :Symptom ;
+    rdfs:label "Recovery" .
+
+:Hyperglycemia rdf:type :Symptom ;
+    rdfs:label "Hyperglycemia" .
+
+:LeukocyteCount rdf:type :Symptom ;
+    rdfs:label "Leukocyte Count" .
+
+:Immunostimulation rdf:type :Disease ;
+    rdfs:label "Immunostimulation" ;
+    :leadsToSymptom :LeukocyteCount .
+
+:RecoveryRate rdf:type :Symptom ;
+    rdfs:label "Recovery Rate" .
+
+:CyclicNucleotidePhosphodiesterase rdf:type :Molecule ;
+    rdfs:label "Cyclic Nucleotide Phosphodiesterase" ;
+    :relatedTo :MammaryCarcinoma .
+
+:NonmetastasizingCarcinoma rdf:type :Disease ;
+    rdfs:label "Nonmetastasizing Rat Mammary Carcinoma" ;
+    :leadsToSymptom :CyclicNucleotidePhosphodiesterase .
+
+:MetastasizingCarcinoma rdf:type :Disease ;
+    rdfs:label "Metastasizing Rat Mammary Carcinoma" ;
+    :leadsToSymptom :CyclicNucleotidePhosphodiesterase .
+
+:Theophylline rdf:type :Drug ;
+    rdfs:label "Theophylline" ;
+    :hasSideEffect :PhosphodiesteraseInhibition .
+
+:Caffeine rdf:type :Drug ;
+    rdfs:label "Caffeine" ;
+    :hasSideEffect :PhosphodiesteraseInhibition .
+
+:Ro201724 rdf:type :Drug ;
+    rdfs:label "Ro20-1724" ;
+    :hasSideEffect :PhosphodiesteraseInhibition .
+
+:Mg rdf:type :Molecule ;
+    rdfs:label "Magnesium" ;
+    :affectsMolecule :CyclicNucleotidePhosphodiesterase .
+
+:Mn rdf:type :Molecule ;
+    rdfs:label "Manganese" ;
+    :affectsMolecule :CyclicNucleotidePhosphodiesterase .
+
+:Co rdf:type :Molecule ;
+    rdfs:label "Cobalt" ;
+    :affectsMolecule :CyclicNucleotidePhosphodiesterase .
+
+:Ca rdf:type :Molecule ;
+    rdfs:label "Calcium" ;
+    :affectsMolecule :CyclicNucleotidePhosphodiesterase .
+
+:Zn rdf:type :Molecule ;
+    rdfs:label "Zinc" ;
+    :affectsMolecule :CyclicNucleotidePhosphodiesterase .
+
+:Hydrolysis rdf:type :Process ;
+    rdfs:label "Hydrolysis of Nucleotides" ;
+    :relatedTo :CyclicNucleotidePhosphodiesterase .
+
+:CyclicPurineNucleotides rdf:type :Molecule ;
+    rdfs:label "Cyclic Purine Nucleotides" ;
+    :relatedTo :Hydrolysis .
+
+:CyclicPyrimidineNucleotides rdf:type :Molecule ;
+    rdfs:label "Cyclic Pyrimidine Nucleotides" ;
+    :relatedTo :Hydrolysis .
+
+:Inhibition rdf:type :Process ;
+    rdfs:label "Inhibition of Enzyme Activity" ;
+    :relatedTo :CyclicNucleotidePhosphodiesterase .

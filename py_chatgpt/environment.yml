@@ -1,0 +1,9 @@
+name: knowledge_graph_env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - openai
+  - pyopenssl
+  - requests
+  - pypdf2

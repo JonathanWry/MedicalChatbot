@@ -1,0 +1,41 @@
+:HeartFailureWithPreservedEjectionFraction rdf:type :Disease ;
+    rdfs:label "Heart Failure with Preserved Ejection Fraction" ;
+    :relatedTo :Obesity, :Sedentariness, :CardiometabolicDisorders ;
+    :leadsToSymptom :Dyspnea, :ExerciseIntolerance ;
+    :associatedWithDisease :HeartFailure ;
+    :hasSideEffect :Hypoglycemia, :Dehydration ;
+    :interactsWith :SGLT2Inhibitor .
+
+:SGLT2Inhibitor rdf:type :Drug ;
+    rdfs:label "Sodium-Glucose Cotransporter-2 Inhibitor" ;
+    :usedFor :HeartFailureWithPreservedEjectionFraction ;
+    :hasSideEffect :Hypoglycemia, :Dehydration ;
+    :interactsWith :OtherDrugs .
+
+:Obesity rdf:type :Disease ;
+    rdfs:label "Obesity" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction ;
+    :associatedWithDisease :Diabetes ;
+    :hasSideEffect :CardiovascularDisease .
+
+:Dyspnea rdf:type :Symptom ;
+    rdfs:label "Dyspnea" ;
+    :leadsToSymptom :HeartFailureWithPreservedEjectionFraction .
+
+:ExerciseIntolerance rdf:type :Symptom ;
+    rdfs:label "Exercise Intolerance" ;
+    :leadsToSymptom :HeartFailureWithPreservedEjectionFraction .
+
+:CardiometabolicDisorders rdf:type :Disease ;
+    rdfs:label "Cardiometabolic Disorders" ;
+    :relatedTo :HeartFailureWithPreservedEjectionFraction .
+
+:Hypoglycemia rdf:type :SideEffect ;
+    rdfs:label "Hypoglycemia" .
+
+:Dehydration rdf:type :SideEffect ;
+    rdfs:label "Dehydration" .
+
+:CardiovascularDisease rdf:type :Disease ;
+    rdfs:label "Cardiovascular Disease" ;
+    :relatedTo :Obesity .

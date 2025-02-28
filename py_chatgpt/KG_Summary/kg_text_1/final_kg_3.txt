@@ -1,0 +1,84 @@
+:WeaklyAcidicFraction rdf:type :Molecule ;
+                      rdfs:label "Weakly Acidic Fraction" .
+
+:CigaretteSmoke rdf:type :Molecule ;
+                rdfs:label "Cigarette Smoke" ;
+                :relatedTo :WeaklyAcidicFraction .
+
+:MouseEpidermalDNA rdf:type :Anatomy ;
+                    rdfs:label "Mouse Epidermal DNA" .
+
+:TumorPromotingActivity rdf:type :Pathway ;
+                        rdfs:label "Tumor Promoting Activity" .
+
+:IncorporationOfThymidine rdf:type :Symptom ;
+                          rdfs:label "Incorporation of Tritiated Thymidine" ;
+                          :leadsToSymptom :TumorPromotingActivity .
+
+:ActiveSubfractions rdf:type :Molecule ;
+                    rdfs:label "Active Subfractions" ;
+                    :relatedTo :WeaklyAcidicFraction .
+
+:InactiveSubfractions rdf:type :Molecule ;
+                      rdfs:label "Inactive Subfractions" ;
+                      :relatedTo :WeaklyAcidicFraction .
+
+:Alkyl2Cyclopenten2Ol1Ones rdf:type :Molecule ;
+                             rdfs:label "Alkyl-2-cyclopenten-2-ol-1-ones" ;
+                             :relatedTo :ActiveSubfractions .
+
+:Catechols rdf:type :Molecule ;
+           rdfs:label "Catechols" ;
+           :relatedTo :ActiveSubfractions ;
+           :hasSideEffect :InactiveSubfractions .
+
+:Hydroquinone rdf:type :Molecule ;
+              rdfs:label "Hydroquinone" ;
+              :relatedTo :ActiveSubfractions ;
+              :hasSideEffect :InactiveSubfractions .
+
+:FattyAcids rdf:type :Molecule ;
+            rdfs:label "Fatty Acids" ;
+            :relatedTo :ActiveSubfractions .
+
+:Hydroxypyridines rdf:type :Molecule ;
+                  rdfs:label "3-Hydroxypyridines" ;
+                  :relatedTo :ActiveSubfractions ;
+                  :hasSideEffect :InactiveSubfractions .
+
+:LinolenicAcid rdf:type :Molecule ;
+               rdfs:label "Linolenic Acid" ;
+               :relatedTo :InactiveSubfractions .
+
+:LinoleicAcid rdf:type :Molecule ;
+              rdfs:label "Linoleic Acid" ;
+              :relatedTo :InactiveSubfractions .
+
+:Chromatography rdf:type :Pathway ;
+                rdfs:label "Silica Gel Chromatography" ;
+                :involvedIn :WeaklyAcidicFraction .
+
+:ShortTermBioassay rdf:type :Pathway ;
+                   rdfs:label "Short-term Bioassay" ;
+                   :involvedIn :ActiveSubfractions .
+
+:LongTermApplication rdf:type :Pathway ;
+                    rdfs:label "Long-term Application" ;
+                    :involvedIn :ActiveSubfractions .
+
+:ActivePortions rdf:type :Molecule ;
+                rdfs:label "Active Portions" ;
+                :relatedTo :ActiveSubfractions ;
+                :involvedIn :ShortTermBioassay .
+
+:UnknownActivity rdf:type :Symptom ;
+                rdfs:label "Unknown Activity" ;
+                :leadsToSymptom :Alkyl2Cyclopenten2Ol1Ones .
+
+:ChemicalComposition rdf:type :Pathway ;
+                    rdfs:label "Chemical Composition" ;
+                    :associatedWithPathway :WeaklyAcidicFraction .
+
+:PotentialTumorPromotingActivity rdf:type :Symptom ;
+                                 rdfs:label "Potential Tumor Promoting Activity" ;
+                                 :leadsToSymptom :TumorPromotingActivity .

@@ -1,0 +1,186 @@
+### First Iteration
+```turtle
+:DrugA rdf:type :Drug ;
+       rdfs:label "Drug A" ;
+       :usedFor :DiseaseX .
+
+:DiseaseX rdf:type :Disease ;
+          rdfs:label "Disease X" ;
+          :leadsToSymptom :SymptomY .
+
+:SymptomY rdf:type :Symptom ;
+          rdfs:label "Symptom Y" .
+
+:SideEffectA rdf:type :SideEffect ;
+              rdfs:label "Side Effect A" ;
+              :hasSideEffect :DrugA .
+
+:GeneA rdf:type :Gene ;
+       rdfs:label "Gene A" ;
+       :associatedWithDisease :DiseaseX .
+
+:PathwayA rdf:type :Pathway ;
+          rdfs:label "Pathway A" ;
+          :pathwayAssociatedWithDisease :DiseaseX .
+```
+
+### Second Iteration
+```turtle
+:DrugA rdf:type :Drug ;
+       rdfs:label "Drug A" ;
+       :hasSideEffect :SideEffectA ;
+       :targetsGene :GeneA ;
+       :involvedIn :PathwayA .
+
+:DrugB rdf:type :Drug ;
+       rdfs:label "Drug B" ;
+       :usedFor :DiseaseX ;
+       :hasSideEffect :SideEffectB .
+
+:SideEffectB rdf:type :SideEffect ;
+              rdfs:label "Side Effect B" ;
+              :hasSideEffect :DrugB .
+
+:GeneB rdf:type :Gene ;
+       rdfs:label "Gene B" ;
+       :associatedWithDisease :DiseaseX .
+
+:PathwayB rdf:type :Pathway ;
+          rdfs:label "Pathway B" ;
+          :pathwayAssociatedWithDisease :DiseaseX .
+```
+
+### Third Iteration
+```turtle
+:DrugA rdf:type :Drug ;
+       rdfs:label "Drug A" ;
+       :hasSideEffect :SideEffectA ;
+       :targetsGene :GeneA ;
+       :involvedIn :PathwayA ;
+       :interactsWith :DrugB .
+
+:DrugB rdf:type :Drug ;
+       rdfs:label "Drug B" ;
+       :hasSideEffect :SideEffectB ;
+       :targetsGene :GeneB ;
+       :involvedIn :PathwayB ;
+       :interactsWith :DrugA .
+
+:SideEffectA rdf:type :SideEffect ;
+              rdfs:label "Side Effect A" .
+
+:SideEffectB rdf:type :SideEffect ;
+              rdfs:label "Side Effect B" .
+
+:GeneA rdf:type :Gene ;
+       rdfs:label "Gene A" ;
+       :associatedWithDisease :DiseaseX .
+
+:GeneB rdf:type :Gene ;
+       rdfs:label "Gene B" ;
+       :associatedWithDisease :DiseaseX .
+
+:PathwayA rdf:type :Pathway ;
+          rdfs:label "Pathway A" ;
+          :pathwayAssociatedWithDisease :DiseaseX .
+
+:PathwayB rdf:type :Pathway ;
+          rdfs:label "Pathway B" ;
+          :pathwayAssociatedWithDisease :DiseaseX .
+```
+
+### Fourth Iteration
+```turtle
+:DrugA rdf:type :Drug ;
+       rdfs:label "Drug A" ;
+       :hasSideEffect :SideEffectA ;
+       :targetsGene :GeneA ;
+       :involvedIn :PathwayA ;
+       :interactsWith :DrugB ;
+       :usedFor :DiseaseX .
+
+:DrugB rdf:type :Drug ;
+       rdfs:label "Drug B" ;
+       :hasSideEffect :SideEffectB ;
+       :targetsGene :GeneB ;
+       :involvedIn :PathwayB ;
+       :interactsWith :DrugA ;
+       :usedFor :DiseaseX .
+
+:DiseaseX rdf:type :Disease ;
+          rdfs:label "Disease X" ;
+          :leadsToSymptom :SymptomY .
+
+:SymptomY rdf:type :Symptom ;
+          rdfs:label "Symptom Y" .
+
+:SideEffectA rdf:type :SideEffect ;
+              rdfs:label "Side Effect A" .
+
+:SideEffectB rdf:type :SideEffect ;
+              rdfs:label "Side Effect B" .
+
+:GeneA rdf:type :Gene ;
+       rdfs:label "Gene A" ;
+       :associatedWithDisease :DiseaseX .
+
+:GeneB rdf:type :Gene ;
+       rdfs:label "Gene B" ;
+       :associatedWithDisease :DiseaseX .
+
+:PathwayA rdf:type :Pathway ;
+          rdfs:label "Pathway A" ;
+          :pathwayAssociatedWithDisease :DiseaseX .
+
+:PathwayB rdf:type :Pathway ;
+          rdfs:label "Pathway B" ;
+          :pathwayAssociatedWithDisease :DiseaseX .
+```
+
+### Final Iteration
+```turtle
+:DrugA rdf:type :Drug ;
+       rdfs:label "Drug A" ;
+       :hasSideEffect :SideEffectA ;
+       :targetsGene :GeneA ;
+       :involvedIn :PathwayA ;
+       :interactsWith :DrugB ;
+       :usedFor :DiseaseX .
+
+:DrugB rdf:type :Drug ;
+       rdfs:label "Drug B" ;
+       :hasSideEffect :SideEffectB ;
+       :targetsGene :GeneB ;
+       :involvedIn :PathwayB ;
+       :interactsWith :DrugA ;
+       :usedFor :DiseaseX .
+
+:DiseaseX rdf:type :Disease ;
+          rdfs:label "Disease X" ;
+          :leadsToSymptom :SymptomY .
+
+:SymptomY rdf:type :Symptom ;
+          rdfs:label "Symptom Y" .
+
+:SideEffectA rdf:type :SideEffect ;
+              rdfs:label "Side Effect A" .
+
+:SideEffectB rdf:type :SideEffect ;
+              rdfs:label "Side Effect B" .
+
+:GeneA rdf:type :Gene ;
+       rdfs:label "Gene A" ;
+       :associatedWithDisease :DiseaseX .
+
+:GeneB rdf:type :Gene ;
+       rdfs:label "Gene B" ;
+       :associatedWithDisease :DiseaseX .
+
+:PathwayA rdf:type :Pathway ;
+          rdfs:label "Pathway A" ;
+          :pathwayAssociatedWithDisease :DiseaseX .
+
+:PathwayB rdf:type :Pathway ;
+          rdfs:label "Pathway B" ;
+          :pathwayAssociatedWithDisease :DiseaseX .
+```

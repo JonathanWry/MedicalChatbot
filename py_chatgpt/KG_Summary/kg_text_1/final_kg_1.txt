@@ -1,0 +1,63 @@
+:WeaklyAcidicFraction rdf:type :Molecule ;
+rdfs:label "Weakly Acidic Fraction (WAF)" .
+
+:CigaretteSmoke rdf:type :Molecule ;
+rdfs:label "Cigarette Smoke" .
+
+:Chromatography rdf:type :Pathway ;
+rdfs:label "Silica Gel Chromatography" .
+
+:MouseEpidermalDNA rdf:type :Anatomy ;
+rdfs:label "Mouse Epidermal DNA" .
+
+:IncorporationOfThymidine rdf:type :Pathway ;
+rdfs:label "Incorporation of Tritiated Thymidine" ;
+:involvedIn :MouseEpidermalDNA .
+
+:ActiveSubfractions rdf:type :Molecule ;
+rdfs:label "Active Subfractions" ;
+:relatedTo :AlkylCyclopentenones, :Catechols, :Hydroquinone, :FattyAcids, :Hydroxypyridines ;
+:leadsToSymptom :TumorPromotingActivity .
+
+:InactiveSubfractions rdf:type :Molecule ;
+rdfs:label "Inactive Subfractions" ;
+:relatedTo :Catechols, :Hydroquinone, :Hydroxypyridines, :LinolenicAcid, :LinoleicAcid .
+
+:AlkylCyclopentenones rdf:type :Molecule ;
+rdfs:label "Alkyl-2-Cyclopenten-2-ol-1-ones" ;
+:hasSideEffect :UnknownActivity .
+
+:Catechols rdf:type :Molecule ;
+rdfs:label "Catechols" ;
+:hasSideEffect :InactiveSubfractions .
+
+:Hydroquinone rdf:type :Molecule ;
+rdfs:label "Hydroquinone" ;
+:hasSideEffect :InactiveSubfractions .
+
+:FattyAcids rdf:type :Molecule ;
+rdfs:label "Fatty Acids" ;
+:hasSideEffect :InactiveSubfractions .
+
+:Hydroxypyridines rdf:type :Molecule ;
+rdfs:label "3-Hydroxypyridines" ;
+:hasSideEffect :InactiveSubfractions .
+
+:LinolenicAcid rdf:type :Molecule ;
+rdfs:label "Linolenic Acid" ;
+:hasSideEffect :InactiveSubfractions .
+
+:LinoleicAcid rdf:type :Molecule ;
+rdfs:label "Linoleic Acid" ;
+:hasSideEffect :InactiveSubfractions .
+
+:MouseSkin rdf:type :Anatomy ;
+rdfs:label "Mouse Skin" ;
+:usedFor :MouseSkin .
+
+:TumorPromotingActivity rdf:type :Symptom ;
+rdfs:label "Tumor Promoting Activity" ;
+:leadsToSymptom :TumorPromotingActivity .
+
+:WeaklyAcidicFraction :relatedTo :CigaretteSmoke, :InactiveSubfractions, :ActiveSubfractions ;
+:usedFor :MouseSkin .

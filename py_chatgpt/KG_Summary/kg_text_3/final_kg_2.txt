@@ -1,0 +1,72 @@
+:Phosphodiesterase rdf:type :Enzyme ;
+                   rdfs:label "Cyclic Nucleotide Phosphodiesterase" ;
+                   :relatedTo :NonmetastasizingCarcinoma, :MetastasizingCarcinoma ;
+                   :interactsWith :Inhibitor, :Inhibitor2, :Inhibitor3, :Stimulator1, :Stimulator2, :Stimulator3, :Suppressor1, :Suppressor2, :Suppressor3, :EDTA ;
+                   :targetsGene :Gene1, :Gene2 .
+
+:NonmetastasizingCarcinoma rdf:type :Disease ;
+                           rdfs:label "Nonmetastasizing Rat Mammary Carcinoma" ;
+                           :hasSideEffect :AlteredEnzymeActivity ;
+                           :leadsToSymptom :AlteredEnzymeActivity ;
+                           :associatedWithDisease :Phosphodiesterase .
+
+:MetastasizingCarcinoma rdf:type :Disease ;
+                        rdfs:label "Spontaneously Metastasizing Rat Mammary Carcinoma" ;
+                        :hasSideEffect :AlteredEnzymeActivity ;
+                        :leadsToSymptom :AlteredEnzymeActivity ;
+                        :associatedWithDisease :Phosphodiesterase .
+
+:PurineNucleotide rdf:type :Molecule ;
+                  rdfs:label "Cyclic Purine Nucleotides" .
+
+:PyrimidineNucleotide rdf:type :Molecule ;
+                     rdfs:label "Cyclic Pyrimidine Nucleotides" .
+
+:Inhibitor rdf:type :Drug ;
+           rdfs:label "Theophylline" ;
+           :usedFor :Phosphodiesterase ;
+           :hasSideEffect :AlteredEnzymeActivity .
+
+:Inhibitor2 rdf:type :Drug ;
+            rdfs:label "Caffeine" ;
+            :usedFor :Phosphodiesterase ;
+            :hasSideEffect :AlteredEnzymeActivity .
+
+:Inhibitor3 rdf:type :Drug ;
+            rdfs:label "D,L-4-(3-butoxy-4-methoxybenzyl)-2-imidazolidinone" ;
+            :usedFor :Phosphodiesterase ;
+            :hasSideEffect :AlteredEnzymeActivity .
+
+:Stimulator1 rdf:type :Molecule ;
+             rdfs:label "Mg++" ;
+             :affectsMolecule :Phosphodiesterase .
+
+:Stimulator2 rdf:type :Molecule ;
+             rdfs:label "Mn++" ;
+             :affectsMolecule :Phosphodiesterase .
+
+:Stimulator3 rdf:type :Molecule ;
+             rdfs:label "Co++" ;
+             :affectsMolecule :Phosphodiesterase .
+
+:Suppressor1 rdf:type :Molecule ;
+             rdfs:label "Ca++" ;
+             :affectsMolecule :Phosphodiesterase .
+
+:Suppressor2 rdf:type :Molecule ;
+             rdfs:label "Zn++" ;
+             :affectsMolecule :Phosphodiesterase .
+
+:Suppressor3 rdf:type :Molecule ;
+             rdfs:label "Ni++" ;
+             :affectsMolecule :Phosphodiesterase .
+
+:EDTA rdf:type :Molecule ;
+      rdfs:label "EDTA" ;
+      :affectsMolecule :Phosphodiesterase .
+
+:Gene1 rdf:type :Gene ;
+       rdfs:label "Gene1" .
+
+:Gene2 rdf:type :Gene ;
+       rdfs:label "Gene2" .
